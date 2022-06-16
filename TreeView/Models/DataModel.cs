@@ -16,7 +16,7 @@ namespace TreeView.Models
         public string DataName { get; set; }
         public int ParentId { get; set; }
 
-
+        
     }
 
 }

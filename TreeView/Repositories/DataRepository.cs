@@ -46,5 +46,20 @@ namespace TreeView.Repositories
                 _context.SaveChanges();
             }
         }
+        public void FakeData()
+        {
+            //Random rnd = new Random();
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    DataModel element = new DataModel()
+            //    {
+            //        DataId = i,
+            //        DataName = "Name",
+            //        ParentId = rnd.Next(5)
+            //    };
+            //    _context.Datas.Add(element);
+            //}
+        }
+
     }
 }

@@ -13,5 +13,6 @@ namespace TreeView.Repositories
         void Add(DataModel data);
         void Update(int dataId, DataModel data);
         void Delete(int dataId);
+        void FakeData();
     }
 }

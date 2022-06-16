@@ -13,6 +13,7 @@ namespace TreeView.Controllers
         private readonly IDataRepository _dataRepository;
         public DataController(IDataRepository dataRepository)
         {
+            
             _dataRepository = dataRepository;
         }
         // GET: DataController
@@ -64,5 +65,7 @@ namespace TreeView.Controllers
             return RedirectToAction(nameof(Index));
 
         }
+        
+
     }
 }
