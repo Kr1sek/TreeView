@@ -1,0 +1,82 @@
+﻿@model IEnumerable<TreeView.Models.DataModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>TreeView</h2>
+
+<p>
+    @Html.ActionLink("Add element", "Create")
+</p>
+
+
+<div>
+    @{DisplayTree(Model.Where(e => e.ParentId.Equals(0)).OrderBy(e => e.DataId));}
+</div>
+
+
+
+
+@{ void DisplayTree(IEnumerable<TreeView.Models.DataModel> datas)
+    {
+        <ul>
+            @foreach (var item in datas)
+            {
+
+                <li>
+                    <div class="info">
+                        <span class="elements">
+                            @Html.DisplayFor(modelitem => item.DataId)
+                            | @Html.DisplayFor(modelitem => item.DataName)
+                            | @Html.ActionLink("Edit", "Edit", new { id = item.DataId })
+                            | @Html.ActionLink("Delete", "Delete", new { id = item.DataId })
+                        </span>
+                    </div>
+
+                    @{
+                        var children = Model.Where(e => e.ParentId.Equals(item.DataId)).OrderBy(e => e.DataId);
+                        if (children.Count() > 0)
+                        {
+                            {DisplayTree(children.ToList());}
+                        }
+                    }
+                </li>
+            }
+
+
+        </ul>
+    }
+}
+
+
+<style>
+    h2, p {
+        padding-left: 20px;
+    }
+
+    ul, #mainUl {
+        list-style: none;
+    }
+
+    #mainUl {
+        margin: 0;
+        padding: 0;
+    }
+
+    .info {
+        margin: 5px;
+        padding: 2px;
+        background-color: aqua;
+        border: 1px solid black;
+        border-radius: 25px;
+    }
+
+    .elements {
+        padding-left: 20px;
+    }
+
+    span {
+        padding-left: 20px;
+    }
+</style>
+
