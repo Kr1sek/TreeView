@@ -4,13 +4,16 @@
 Projekt który pozwala wyświetlić elementy w postaci drzewa.  
 Główne okno pokazuje drzewo z elementami, do dyspozycji mamy również opcje dodawania, usuwania oraz edytowania elementów.
 
+By uruchomić projekt należy utworzyć bazę danych.
+
 Utworzenie bazy danych(przy pomocy Mincrosoft SQL Management Studio)  
 Otwieramy plik Baza.sql  
 W polu "Server Name" wpisujemy "(localdb)\MSSQLLocalDB"  
 Klikamy "Connect"  
 Klikamy "Execute"  
 
-Uruchomienie projektu  
+Po utworzeniu bazy danych możemy uruchomić projekt na dwa sposoby:
+ 
 Sposób 1 (Gdy posiadamy Visual Studio 2019)  
 Odnajdujemy Folder TreeView  
 TreeView -> TreeView.sln  
